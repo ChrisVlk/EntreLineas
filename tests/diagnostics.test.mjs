@@ -1,0 +1,11 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {convert} from '../src/multilang.js';
+const error=(source,lang='pseint')=>{const r=convert(source,lang,'python');assert.equal(r.code,'');assert.ok(r.errors.length);return r.errors[0];};
+test('undeclared identifier pinpoints original source, ignoring equal text in strings',()=>{const source='let a = 1;\nconsole.log("missing", missing);';const e=error(source,'javascript');assert.equal(e.line,2);assert.equal(e.column,24);assert.equal(source.slice(e.from,e.to),'missing');assert.match(e.hint,/antes de usarla/);});
+test('unclosed string highlights from its opening quote',()=>{const source='Algoritmo A\n    Escribir "Hola\nFinAlgoritmo';const e=error(source);assert.equal(e.column,14);assert.equal(source.slice(e.from,e.to),'"Hola');assert.match(e.message,/comilla de cierre/);});
+test('missing Python colon marks an insertion at end of header',()=>{const e=error('x = 1\nif x > 0\n    print(x)','python');assert.equal(e.line,2);assert.equal(e.column,9);assert.equal(e.from,e.to);assert.match(e.message,/Falta «:»/);});
+test('unexpected expression operator identifies the actual symbol',()=>{const s='Algoritmo A\nEscribir 1 + * 2\nFinAlgoritmo';const e=error(s);assert.equal(s.slice(e.from,e.to),'*');assert.match(e.message,/se esperaba/);});
+test('unsupported list names the limitation and points at bracket',()=>{const s='items = [1, 2]';const e=error(s,'python');assert.equal(s.slice(e.from,e.to),'[');assert.match(e.message,/arreglos o listas/);assert.match(e.hint,/no significa/);});
+test('PSeInt incomplete instructions say what is missing',()=>{for(const [body,expected] of [['Escribir',/Falta un valor/],['Si Verdadero',/Falta «Entonces»/],['Mientras Verdadero',/Falta «Hacer»/]]){const e=error('Algoritmo A\n'+body+'\nFinAlgoritmo');assert.match(e.message,expected);assert.equal(e.insertion,true);}});
+test('unrecognized instruction is reported honestly as an instruction range',()=>{const s='Algoritmo A\n    Mostrar 42\nFinAlgoritmo';const e=error(s);assert.equal(e.scope,'instruction');assert.equal(s.slice(e.from,e.to),'Mostrar 42');assert.match(e.message,/Mostrar 42/);});

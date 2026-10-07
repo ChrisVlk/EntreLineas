@@ -91,6 +91,10 @@ Las salas no aparecen en un listado público. Cada acceso consulta sus propias s
 
 El traductor está orientado a ejercicios introductorios: variables, expresiones, entrada/salida, decisiones y bucles compatibles. La consola interpreta el código de origen normalizado al subconjunto educativo en un Web Worker; no es un compilador nativo ni un entorno completo de Python, JavaScript o C. No utiliza eval ni ofrece acceso a la red, archivos o APIs del navegador desde el programa. Las construcciones no admitidas, como funciones o estructuras avanzadas, deben producir un diagnóstico en lugar de un resultado aparentemente equivalente. Consulta la guía del editor para ejemplos y limitaciones.
 
+## Diagnósticos del código
+
+Los errores muestran línea y columna, un fragmento resaltado y una sugerencia de corrección. **Ir al error** lleva el cursor al fragmento en el editor. Las líneas afectadas se marcan y los símbolos identificados se subrayan. Si no se puede aislar un símbolo, se identifica explícitamente la instrucción afectada. Los mensajes distinguen sintaxis incompleta de construcciones válidas que el traductor todavía no admite. La consola también muestra el fragmento y un indicador bajo el error.
+
 ## Consola de ejecución
 
 Pulsa **Ejecutar** debajo del editor para ver la salida. Cuando el programa solicite un dato, escribe su valor y pulsa **Enviar dato**. Los datos numéricos y lógicos se validan antes de continuar. **Detener** cancela la ejecución y **Limpiar** vacía la consola.

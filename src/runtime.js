@@ -1,12 +1,13 @@
+import {diagnostic,formatDiagnostic} from './diagnostics.js';
 import {convert} from './multilang.js';
 
 // Interpret only the validated AST. Never eval student code or expose browser APIs.
 export function* execute(source,language='pseint',limits={}) {
  const program=convert(source,language,'pseint');
- if(program.errors.length)throw Error(`Línea ${program.errors[0].line}: ${program.errors[0].message}`);
+ if(program.errors.length)throw Error(formatDiagnostic(program.errors[0]));
  if(program.empty)throw Error('Escribe un programa antes de ejecutarlo.');
  const values=new Map(),types=new Map();let steps=0,output=0,line=1;
- const fail=message=>{throw Error(`Línea ${program.sourceMap?.[line-1]||line}: ${message}`)};
+ const fail=message=>{throw Error(formatDiagnostic(diagnostic(source,language,{line:program.sourceMap?.[line-1]||line,message})))};
  const tick=()=>{if(++steps>(limits.steps??100000))fail('Se alcanzó el límite de pasos. Revisa si hay un bucle infinito.');};
  function expression(a){tick();if(a.kind==='literal')return a.type==='int'||a.type==='real'?Number(a.v):a.v;
   if(a.kind==='variable')return values.get(a.v);

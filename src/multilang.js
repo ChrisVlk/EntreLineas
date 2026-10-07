@@ -1,3 +1,4 @@
+import {diagnostic} from './diagnostics.js';
 import {translate} from './translator.js';
 
 // Every supported input is normalized to the same typed PSeInt subset.
@@ -7,9 +8,9 @@ export function convert(source,from='pseint',to='python'){
  try{
   const normalized=from==='pseint'?{code:source,map:source.split('\n').map((_,i)=>i+1)}:normalize(source,from);
   const result=translate(normalized.code,to==='pseint'?'python':to);
-  if(result.errors.length)return {...result,errors:result.errors.map(e=>({...e,line:normalized.map[e.line-1]||1}))};
+  if(result.errors.length)return {...result,errors:result.errors.map(e=>diagnostic(source,from,{...e,line:normalized.map[e.line-1]||1}))};
   return {...result,sourceMap:normalized.map,code:to==='pseint'?normalized.code:result.code};
- }catch(e){return {code:'',errors:[{line:e.line||1,message:e.message||'Revisa la sintaxis del programa.'}],name:'mi_algoritmo'}}
+ }catch(e){return {code:'',errors:[diagnostic(source,from,{line:e.line||1,message:e.message||'Revisa la sintaxis del programa.'})],name:'mi_algoritmo'}}
 }
 const fail=(line,message)=>{throw {line,message}};
 function split(s,separator=','){let out=[],start=0,depth=0,q='';for(let i=0;i<s.length;i++){const c=s[i];if(q){if(c==='\\')i++;else if(c===q)q='';continue}if(c==='"'||c==="'")q=c;else if(c==='('||c==='[')depth++;else if(c===')'||c===']')depth--;else if(c===separator&&depth===0){out.push(s.slice(start,i).trim());start=i+1}}out.push(s.slice(start).trim());return out}
