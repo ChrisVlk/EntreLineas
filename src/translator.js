@@ -50,5 +50,5 @@ export function translate(source, lang='python') {
  }}}
  if(lang==='c'){indent=0;emit('#include <stdio.h>');emit('#include <stdbool.h>');emit('#include <string.h>');emit('#include <ctype.h>');emit('#include <math.h>');emit('');emit('int main(void) {');indent=1}else emit((lang==='python'?'# ':'// ')+name);
  body(ast);if(lang==='c'){emit('return 0;');indent=0;emit('}')}
- return {code:lines.join('\n'),errors,mapping,name};
+ return {code:lines.join('\n'),errors,mapping,name,ast};
 }

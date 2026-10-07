@@ -7,6 +7,7 @@ Aplicación educativa para aprender programación comparando código entre **PSe
 ## Funcionalidades
 
 - Editor de origen y resultado lado a lado, con selección de lenguajes e inversión de la traducción.
+- Consola educativa con Ejecutar, Detener, Limpiar y entrada interactiva de datos.
 - Práctica libre sin cuentas ni necesidad de pertenecer a una sala.
 - Cualquier visitante puede crear una sala y compartir su código único o enlace.
 - Los participantes entran con su nombre; no se solicitan correos ni acceso con Google.
@@ -88,7 +89,15 @@ Las salas no aparecen en un listado público. Cada acceso consulta sus propias s
 
 ## Alcance de la traducción
 
-El traductor está orientado a ejercicios introductorios: variables, expresiones, entrada/salida, decisiones y bucles compatibles. No es un compilador general ni ejecuta código. Las construcciones no admitidas, como funciones o estructuras avanzadas, deben producir un diagnóstico en lugar de un resultado aparentemente equivalente. Consulta la guía del editor para ejemplos y limitaciones.
+El traductor está orientado a ejercicios introductorios: variables, expresiones, entrada/salida, decisiones y bucles compatibles. La consola interpreta el código de origen normalizado al subconjunto educativo en un Web Worker; no es un compilador nativo ni un entorno completo de Python, JavaScript o C. No utiliza eval ni ofrece acceso a la red, archivos o APIs del navegador desde el programa. Las construcciones no admitidas, como funciones o estructuras avanzadas, deben producir un diagnóstico en lugar de un resultado aparentemente equivalente. Consulta la guía del editor para ejemplos y limitaciones.
+
+## Consola de ejecución
+
+Pulsa **Ejecutar** debajo del editor para ver la salida. Cuando el programa solicite un dato, escribe su valor y pulsa **Enviar dato**. Los datos numéricos y lógicos se validan antes de continuar. **Detener** cancela la ejecución y **Limpiar** vacía la consola.
+
+Cada ejecución usa una copia del código de origen al pulsar el botón. Si lo editas después, se indica que la salida corresponde a la versión anterior. La consola también está disponible en ejercicios y al consultar entregas, sin modificar ni enviar soluciones.
+
+La ejecución tiene límites de 100 000 pasos, 100 000 caracteres de salida y 5 segundos de cálculo por tramo entre entradas. Esperar una respuesta del usuario no consume ese tiempo. El intérprete usa números de JavaScript y comprueba enteros fuera del rango seguro; no reproduce todos los detalles numéricos o de formato de los compiladores nativos.
 
 ## Pruebas y compilación
 

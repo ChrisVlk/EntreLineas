@@ -8,7 +8,7 @@ export function convert(source,from='pseint',to='python'){
   const normalized=from==='pseint'?{code:source,map:source.split('\n').map((_,i)=>i+1)}:normalize(source,from);
   const result=translate(normalized.code,to==='pseint'?'python':to);
   if(result.errors.length)return {...result,errors:result.errors.map(e=>({...e,line:normalized.map[e.line-1]||1}))};
-  return {...result,code:to==='pseint'?normalized.code:result.code};
+  return {...result,sourceMap:normalized.map,code:to==='pseint'?normalized.code:result.code};
  }catch(e){return {code:'',errors:[{line:e.line||1,message:e.message||'Revisa la sintaxis del programa.'}],name:'mi_algoritmo'}}
 }
 const fail=(line,message)=>{throw {line,message}};
