@@ -4,6 +4,10 @@ Aplicación educativa para aprender programación comparando código entre **PSe
 
 **Aplicación publicada:** https://entre-lineas-classroom.vercel.app/
 
+## Apariencia
+
+La interfaz conserva la paleta verde original. El botón de sol o luna en la barra superior alterna entre modo claro y oscuro, incluidos los editores, las salas, los formularios y la consola. La preferencia se guarda en este navegador; en la primera visita se usa la preferencia del sistema.
+
 ## Funcionalidades
 
 - Editor de origen y resultado lado a lado, con selección de lenguajes e inversión de la traducción.
