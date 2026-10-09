@@ -2445,7 +2445,7 @@ body {
     --ink: #F9FAFB;
     --muted: #9CA3AF;
     --line: #374151;
-    --lime: #34D399;
+    --lime: #2da176;
     color: #F9FAFB;
     background: #111827
 }
@@ -2473,13 +2473,13 @@ body {
 }
 
 [data-theme=dark] .primary {
-    background: #10B981;
+    background: #2da176;
     color: #FFFFFF;
-    border-color: #10B981
+    border-color: #2da176
 }
 
 [data-theme=dark] .primary:hover:not(:disabled) {
-    background: #059669
+    background: #2da176
 }
 
 [data-theme=dark] .secondary {
@@ -2493,7 +2493,7 @@ body {
 }
 
 [data-theme=dark] :is(.text-button, .icon, .back, .join-code, .topbar strong, .share-actions [role=status], .tabs button.active) {
-    color: #34D399
+    color: #2da176
 }
 
 [data-theme=dark] .icon:hover {
@@ -2511,7 +2511,7 @@ body {
 }
 
 [data-theme=dark] .feedback>strong {
-    color: #10B981
+    color: #2da176
 }
 
 [data-theme=dark] :is(.room-card-cover, .cover-1, .cover-2) {
@@ -2520,7 +2520,7 @@ body {
 
 [data-theme=dark] :is(.avatar, .exercise-index, .status, .status.done, .status.graded, .tabs button>span, .list-heading h2>span, .pill) {
     background: #4B5563;
-    color: #34D399
+    color: #2da176
 }
 
 [data-theme=dark] .status.muted {
@@ -2529,7 +2529,7 @@ body {
 }
 
 [data-theme=dark] :is(.room-glyph, .cover-1 .room-glyph, .cover-2 .room-glyph, .feedback>strong) {
-    color: #34D399
+    color: #2da176
 }
 
 [data-theme=dark] .tabs button {
@@ -2537,8 +2537,8 @@ body {
 }
 
 [data-theme=dark] .tabs button.active {
-    color: #34D399;
-    border-bottom-color: #10B981
+    color: #2da176;
+    border-bottom-color: #2da176
 }
 
 [data-theme=dark] .room-card-body>div {
@@ -2578,7 +2578,7 @@ body {
 }
 
 [data-theme=dark] .cm-editor .cm-cursor {
-    border-left-color: #34D399
+    border-left-color: #2da176
 }
 
 [data-theme=dark] .console-output {
@@ -2623,7 +2623,7 @@ body {
 }
 
 [data-theme=dark] .checkbox input {
-    accent-color: #10B981
+    accent-color: #2da176
 }
 
 [data-theme=dark] .topbar {
@@ -2638,5 +2638,5 @@ body {
 }
 
 [data-theme=dark] .console-slide-header .icon {
-    color: #34D399
+    color: #2da176
 }
