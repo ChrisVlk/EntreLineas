@@ -56,3 +56,6 @@
 @media(max-width:760px){.theme-toggle{padding:7px}.theme-toggle>span{display:none}.topbar-actions{gap:5px}.topbar>div:first-child{overflow:hidden}}
 
 [data-theme=dark] :is(.brand>span,.lime-button){color:#12352d}[data-theme=dark] .checkbox input{accent-color:#d5f78b}
+
+/* Optional help stays available without crowding the workspace. */
+.inline-help{font-size:13px;color:var(--muted);margin:12px 0}.inline-help summary{cursor:pointer;width:fit-content;padding:5px 0}.inline-help summary:focus-visible{outline:2px solid #73964e;outline-offset:4px}.inline-help p{max-width:650px;margin:8px 0;line-height:1.6}.console-help{padding:0 18px;margin:8px 0}.sidebar .account{margin-top:auto}.sidebar .room-nav{margin-bottom:20px}.page-heading{margin-bottom:20px}.class-meta{margin-top:16px}.share-room{padding:18px 22px}.share-room p{margin:8px 0 0}@media(max-width:760px){.sidebar .account{margin-top:15px}.content{padding-top:20px}}
