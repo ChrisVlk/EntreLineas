@@ -59,3 +59,47 @@
 
 /* Optional help stays available without crowding the workspace. */
 .inline-help{font-size:13px;color:var(--muted);margin:12px 0}.inline-help summary{cursor:pointer;width:fit-content;padding:5px 0}.inline-help summary:focus-visible{outline:2px solid #73964e;outline-offset:4px}.inline-help p{max-width:650px;margin:8px 0;line-height:1.6}.console-help{padding:0 18px;margin:8px 0}.sidebar .account{margin-top:auto}.sidebar .room-nav{margin-bottom:20px}.page-heading{margin-bottom:20px}.class-meta{margin-top:16px}.share-room{padding:18px 22px}.share-room p{margin:8px 0 0}@media(max-width:760px){.sidebar .account{margin-top:15px}.content{padding-top:20px}}
+
+/* Lilac surfaces and a restrained gradient, keeping code on neutral panels. */
+:root{--ink:#111439;--muted:#66677D;--line:#DEDEEA;--lime:#E6DDFF;color:#242743;background:#F8F8F9}
+body{background:radial-gradient(ellipse at 80% 0%,#ECE2FC 0%,transparent 45%),radial-gradient(ellipse at 35% 0%,#DFEDFF 0%,transparent 40%),#F8F8F9;background-attachment:fixed}
+.sidebar{background:linear-gradient(155deg,#47378D 0%,#353B78 48%,#111439 100%);color:#FFFFFF}
+.sidebar :is(.sidebar-section,.sidebar-note,.room-nav p,.account small){color:#D4D1EB}
+.sidebar :is(nav button,.room-nav button,.account b){color:#FFFFFF}
+.sidebar .nav-active{background:#FFFFFF22;color:#FFFFFF}.sidebar nav button>span,.mini-room{background:#FFFFFF20;color:#FFFFFF}
+.account{border-color:#FFFFFF26}.brand>span{background:#FFFFFF;color:#111439}.brand small{border-color:#FFFFFF66}
+.primary,.lime-button{background:#635BCE;color:#FFFFFF;border-color:#635BCE}.primary:hover:not(:disabled){background:#5149B7}
+.secondary{background:#FFFFFF;color:#111439;border-color:#D8D7E7}.secondary:hover:not(:disabled),.icon:hover{background:#EFEDF8}
+:is(.text-button,.icon,.back,.topbar strong,.join-code,.share-actions [role=status]){color:#5149A5}
+:is(.eyebrow,.topbar,.editor-note,.editor-tools,.editor-footer,.exercise-main p,.exercise-main>span,.room-card-body>p,.work-actions>span,.open-room-banner span,.share-room p){color:#66677D}
+:is(input,select,textarea){border-color:#D8D7E7}input:focus,select:focus,textarea:focus{border-color:#635BCE;outline-color:#635BCE}
+button:focus-visible,a:focus-visible{outline-color:#8471D8}
+.topbar{background:#FFFFFFBD;backdrop-filter:blur(12px)}
+:is(.room-card,.assignment-card,.editor-grid,.editor-footer,.editor-grid>section+section){border-color:var(--line)}
+:is(.share-room,.console-toolbar,.notice:not(.error),.feedback){background:#EFEDF8;border-color:#DCD7EE;color:#242743}
+:is(.avatar,.exercise-index,.status,.status.done,.status.graded,.tabs button>span){background:#EBE7F8;color:#5149A5}
+.class-banner{background:linear-gradient(115deg,#4D3E94,#405A9C,#664897);color:#F8F8F9}.class-banner h1{color:#FFFFFF}.class-banner .light-pill{background:#FFFFFF24;color:#FFFFFF}.class-meta{color:#E0DCF2}.class-symbol{color:#CFC4F7}
+.room-card-cover{background:linear-gradient(110deg,#EAE3F8,#DFE9F9)}.cover-1{background:linear-gradient(110deg,#DFEAF9,#E8E1F8)}.cover-2{background:linear-gradient(110deg,#EEE0F0,#E5E3FB)}
+:is(.room-glyph,.cover-1 .room-glyph,.cover-2 .room-glyph,.feedback>strong){color:#6155A0}.light-pill{color:#514978;background:#FFFFFF99}
+.tabs button.active{color:#5149A5;border-color:#635BCE}.statement{border-left-color:#8471D8}.room-card-body>div{border-color:var(--line);color:#66677D}
+:is(.editor-heading,.editor-footer,.cm-editor .cm-gutters){background:#F8F8F9;color:#72728A;border-color:var(--line)}.editor-heading select{background:#EFEDF8}.cm-editor .cm-activeLine,.cm-editor .cm-activeLineGutter{background:#F0EDF8}
+.empty{background:#FFFFFF80;border-color:#D8D7E7;color:#66677D}.empty p{color:#66677D}.console-output{background:#111439;color:#F0EFF9}
+.editor-tools{justify-content:flex-start;gap:20px}.editor-tools>button:last-child{margin-left:auto}.run-button{min-width:115px}
+dialog:has(.execution-console){max-width:850px}.execution-console{margin-top:0}dialog .console-toolbar h3{display:none}dialog .console-output{min-height:220px;max-height:45vh}dialog::backdrop{background:#11143988}
+:root[data-theme=dark]{--ink:#F0EFF9;--muted:#B4B2CA;--line:#3C3B55;--lime:#B7A5F5;color:#ECEBF4;background:#151626}
+[data-theme=dark] body{background:radial-gradient(ellipse at 80% 0%,#352649 0%,transparent 48%),#151626}
+[data-theme=dark] :is(.topbar,.room-card,.assignment-card,.roster,.submission-row,.invitation-card,.statement,.execution-console,dialog){background:#202134;color:#ECEBF4;border-color:var(--line)}
+[data-theme=dark] :is(input,select,textarea){background:#181929;color:#ECEBF4;border-color:#53516E}
+[data-theme=dark] .primary{background:#B7A5F5;color:#111439;border-color:#B7A5F5}[data-theme=dark] .primary:hover:not(:disabled){background:#CCBFFF}
+[data-theme=dark] .secondary{background:#303047;color:#ECEBF4;border-color:#53516E}[data-theme=dark] .secondary:hover:not(:disabled){background:#403C59}
+[data-theme=dark] :is(.text-button,.icon,.back,.join-code,.topbar strong,.share-actions [role=status],.tabs button.active){color:#C9BCF7}
+[data-theme=dark] :is(.eyebrow,.editor-tools,.editor-footer,.editor-note,.work-actions>span,.exercise-main p,.exercise-main>span,.room-card-body>p,.room-card-body>div,.empty,.empty p,.share-room p,.topbar,.console-toolbar>span){color:#B4B2CA}
+[data-theme=dark] :is(.share-room,.console-toolbar,.feedback,.notice:not(.error),.empty){background:#2B293F;color:#ECEBF4;border-color:#48415F}
+[data-theme=dark] :is(.room-card-cover,.cover-1,.cover-2){background:linear-gradient(110deg,#38304E,#2B3854)}
+[data-theme=dark] :is(.avatar,.exercise-index,.status,.status.done,.status.graded,.tabs button>span){background:#3B3351;color:#E0D4FF}
+[data-theme=dark] :is(.room-glyph,.cover-1 .room-glyph,.cover-2 .room-glyph,.feedback>strong){color:#CCBFFF}
+[data-theme=dark] .tabs button.active{border-color:#B7A5F5}[data-theme=dark] .editor-grid,[data-theme=dark] .cm-editor{background:#181929;color:#ECEBF4}
+[data-theme=dark] :is(.editor-heading,.editor-footer,.cm-editor .cm-gutters){background:#222235;color:#B4B2CA}
+[data-theme=dark] .editor-heading select{background:#303047}[data-theme=dark] :is(.cm-editor .cm-activeLine,.cm-editor .cm-activeLineGutter){background:#302C44}
+[data-theme=dark] .cm-editor .cm-cursor{border-left-color:#CCBFFF}[data-theme=dark] .console-output{background:#101122;color:#F0EFF9}
+@media(max-width:600px){.editor-tools{gap:12px}.editor-tools>button:last-child{margin-left:0}.editor-tools .run-button{flex-basis:100%}dialog .console-output{min-height:180px}}

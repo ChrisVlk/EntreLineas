@@ -6,7 +6,7 @@ Aplicación educativa para aprender programación comparando código entre **PSe
 
 ## Apariencia
 
-La interfaz conserva la paleta verde original. El botón de sol o luna en la barra superior alterna entre modo claro y oscuro, incluidos los editores, las salas, los formularios y la consola. La preferencia se guarda en este navegador; en la primera visita se usa la preferencia del sistema.
+La interfaz combina blanco lila (#F8F8F9), azul oscuro (#111439) y degradados suaves. El botón de sol o luna en la barra superior alterna entre modo claro y oscuro, incluidos los editores, las salas, los formularios y la consola. La preferencia se guarda en este navegador; en la primera visita se usa la preferencia del sistema.
 
 ## Funcionalidades
 
@@ -101,7 +101,7 @@ Los errores muestran línea y columna, un fragmento resaltado y una sugerencia d
 
 ## Consola de ejecución
 
-Pulsa **Ejecutar** debajo del editor para ver la salida. Cuando el programa solicite un dato, escribe su valor y pulsa **Enviar dato**. Los datos numéricos y lógicos se validan antes de continuar. **Detener** cancela la ejecución y **Limpiar** vacía la consola.
+Pulsa **Ejecutar** en la barra superior del editor: abre la consola en una ventana y ejecuta el código automáticamente. Cerrar la ventana o pulsar Escape detiene la ejecución; al volver a abrirla comienza una ejecución nueva. Cuando el programa solicite un dato, escribe su valor y pulsa **Enviar dato**. Los datos numéricos y lógicos se validan antes de continuar. **Detener** cancela la ejecución y **Limpiar** vacía la consola.
 
 Cada ejecución usa una copia del código de origen al pulsar el botón. Si lo editas después, se indica que la salida corresponde a la versión anterior. La consola también está disponible en ejercicios y al consultar entregas, sin modificar ni enviar soluciones.
 
