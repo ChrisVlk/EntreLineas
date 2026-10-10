@@ -2640,3 +2640,9 @@ body {
 [data-theme=dark] .console-slide-header .icon {
     color: #2da176
 }
+/* Console overlay layout; colors inherit the existing theme. */
+dialog:has(.execution-console){max-width:850px}
+dialog .execution-console{margin-top:0}
+dialog .console-toolbar h3{display:none}
+dialog .console-output{min-height:220px;max-height:45vh}
+@media(max-width:600px){dialog .console-output{min-height:180px}}
