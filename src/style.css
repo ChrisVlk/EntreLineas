@@ -2646,3 +2646,11 @@ dialog .execution-console{margin-top:0}
 dialog .console-toolbar h3{display:none}
 dialog .console-output{min-height:220px;max-height:45vh}
 @media(max-width:600px){dialog .console-output{min-height:180px}}
+
+/* Keep the active line translucent so it cannot cover CodeMirror's selection layer. */
+.cm-editor .cm-activeLine { background: rgb(16 185 129 / 6%); }
+[data-theme=dark] .cm-editor .cm-activeLine { background: rgb(148 163 184 / 8%); }
+.cm-editor { --code-selection: #b5e4d3; --code-selection-idle: #d1e7df; }
+[data-theme=dark] .cm-editor { --code-selection: #315d52; --code-selection-idle: #2b443f; }
+.cm-editor .cm-selectionBackground { background: var(--code-selection-idle) !important; }
+.cm-editor.cm-focused .cm-selectionBackground { background: var(--code-selection) !important; }
