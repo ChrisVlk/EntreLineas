@@ -2654,3 +2654,32 @@ dialog .console-output{min-height:220px;max-height:45vh}
 [data-theme=dark] .cm-editor { --code-selection: #315d52; --code-selection-idle: #2b443f; }
 .cm-editor .cm-selectionBackground { background: var(--code-selection-idle) !important; }
 .cm-editor.cm-focused .cm-selectionBackground { background: var(--code-selection) !important; }
+
+/* Mobile audit: touch targets, narrow content, and short viewports. */
+.sidebar { overflow-y: auto; }
+.modal-heading h2 { min-width: 0; overflow-wrap: anywhere; }
+.modal-heading > .icon { flex-shrink: 0; }
+dialog { overflow-y: auto; max-height: 90dvh; }
+@media (max-width: 760px) {
+  .sidebar nav button, .theme-toggle, .text-button, .back, .icon,
+  .primary, .secondary, .tabs button { min-height: 44px; }
+  .icon, .theme-toggle { min-width: 44px; flex-shrink: 0; }
+  input, select, textarea, .editor-heading select { font-size: 16px; }
+  .editor-heading { flex-wrap: wrap; }
+  .editor-heading select { min-height: 44px; min-width: 0; max-width: 100%; }
+  .editor-heading .number { display: none; }
+  .room-toolbar { flex-wrap: wrap; }
+  .tabs { max-width: 100%; overflow-x: auto; gap: 12px; }
+  .tabs button { flex-shrink: 0; }
+  .class-banner > div, .share-room > div, .submission-row > div,
+  .topbar > div:first-child { min-width: 0; }
+  .class-banner h1, .class-banner p, .page-heading h1,
+  .submission-row b, .submission-row p, .statement p, .feedback p {
+    overflow-wrap: anywhere;
+  }
+  .exercise-main > div, .submission-row, .form-actions { flex-wrap: wrap; }
+  .form-actions > button { flex: 1 1 120px; }
+  dialog { padding: 16px; }
+  .console-toolbar { padding: 12px; }
+  .console-input { padding: 12px; }
+}
